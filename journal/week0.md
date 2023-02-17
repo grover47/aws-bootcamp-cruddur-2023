@@ -1,6 +1,6 @@
 # Week 0 — Billing and Architecture
 
-## Required Homework
+## Required Homework and Stretch Assignments
 ### Install AWS CLI
 
 I initially had this setup, but clearly not proper. I re-installed, configured and followed the proper procedure for saving to the environment.
