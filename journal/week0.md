@@ -8,3 +8,6 @@ Committed and pushed to the gitpod.yml file and running the aws sts gett-caller-
 
 Created assett folder and uploaded screen shots for all homework.
 Updated in student portal, with my overview of what I did for homework assignments.
+
+#### Stretch Homework Assignments
+Created a support ticket requesting a service limitt increase for cloudwatch logs. Screenshot is uploaded in my assets folder via journal
