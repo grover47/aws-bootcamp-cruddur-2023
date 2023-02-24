@@ -10,11 +10,10 @@ Successfully connected the backend port 4567 to display code, had errors initial
 
 Backend had similiar errors but able to find and fix. Frontend and backend is working and displaing notification page as expected.
 
-** insert image **
 
 Installed DyanamoDB and Postgres, following along with Andrew video
 
-** insert image ** 
+![Proof of work](
 
 Did the 100DyasOfCode installing docker local as well
 
