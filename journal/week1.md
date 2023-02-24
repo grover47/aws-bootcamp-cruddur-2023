@@ -10,7 +10,7 @@ Successfully connected the backend port 4567 to display code, had errors initial
 
 Backend had similiar errors but able to find and fix. Frontend and backend is working and displaing notification page as expected.
 
-![Proof of work]()
+![Proof of work](journal/assets%20week%201/Flask%20and%20React%20Screenshot%20week%201.png)
 
 Installed DyanamoDB and Postgres, following along with Andrew video
 
