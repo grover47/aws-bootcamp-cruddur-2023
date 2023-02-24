@@ -12,6 +12,12 @@ Backend had similiar errors but able to find and fix. Frontend and backend is wo
 
 ** insert image **
 
+Installed DyanamoDB and Postgres, following along with Andrew video
+
+** insert image ** 
+
+Did the 100DyasOfCode installing docker local as well
+
 
 
 
