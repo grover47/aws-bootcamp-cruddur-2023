@@ -29,7 +29,7 @@ Intsall Postgres client:
  ```
 
 Configured postgres database and completed all video homework
-![Proof of work] ()
+![Proof of work](assets%20week%201/Postgress%20DatabaseConnection%20week%201.png)
 
 
 
