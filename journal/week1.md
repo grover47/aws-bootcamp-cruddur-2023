@@ -18,7 +18,7 @@ Installed DyanamoDB and Postgres, following along with Andrew video
 
 Did the 100DyasOfCode installing docker local as well
 
-Intsall Postgres clientt:
+Intsall Postgres client:
 
 ``` sh
  - name: postgres
@@ -30,7 +30,8 @@ Intsall Postgres clientt:
       
  ```
 
-
+Configured postgres database and completed all video homework
+![Proof of work] ()
 
 
 
