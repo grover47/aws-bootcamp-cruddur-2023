@@ -95,6 +95,8 @@ def init_rollbar():
     rollbar.init(
         # access token
         '338a23dfeb6941fbbbd748f0a837354a',
+        # environment name
+        'production',
         # server root directory, makes tracebacks prettier
         root=os.path.dirname(os.path.realpath(__file__)),
         # flask already sets up logging
