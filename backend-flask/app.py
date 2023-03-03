@@ -96,7 +96,7 @@ def init_rollbar():
         # access token
         rollbar_access_token,
         # environment name
-        'production',
+        '338a23dfeb6941fbbbd748f0a837354a',
         # server root directory, makes tracebacks prettier
         root=os.path.dirname(os.path.realpath(__file__)),
         # flask already sets up logging
@@ -104,7 +104,7 @@ def init_rollbar():
 
     # send exceptions from `app` to rollbar, using flask's signal system.
     got_request_exception.connect(rollbar.contrib.flask.report_exception, app)
-    
+
 @app.route('/rollbar/test')
 def rollbar_test():
     rollbar.report_message('Hello World!', 'warning')
