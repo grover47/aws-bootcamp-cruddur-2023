@@ -11,5 +11,9 @@ Run queries to explore traces within Honeycomb.io
 Instrument AWS X-Ray into backend flask application
 [Proof of work] (assets%20week%202/xray%20in%20app.py%20week%202.png)
 
+Configure and provision X-Ray daemon within docker-compose and send data back to X-Ray API
+[Proof of work] (assets%20week%202/Xray%20Daemon%20file%20in%20Docker-compose.yml%20week%202.png)
+
+
 
 
