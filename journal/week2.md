@@ -16,8 +16,12 @@
 
 ## Observe X-Ray traces within the AWS Console
 ![Proof of work] (/assets%20week%202/Xray%20sampling%20rules%20week%202%20.png)
-
 ![Proof of work] (assets%20week%202/xray%20in%20app.py%20week%202.png)
+
+## Integrate Rollbar for Error Logging
+![Proof of work] (assets%20week%202/Rollbar%20Data%20from%20Backend%20week%202.png)
+
+
 
 
 
