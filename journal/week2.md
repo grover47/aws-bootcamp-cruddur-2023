@@ -21,6 +21,9 @@
 ## Integrate Rollbar for Error Logging
 ![Proof of work] (assets%20week%202/Rollbar%20Data%20from%20Backend%20week%202.png)
 
+## Trigger an error an observe an error with Rollbar
+![Proof of work] (assets%20week%202/Spans%20and%20Attributes%20week%202.png)
+
 
 
 
