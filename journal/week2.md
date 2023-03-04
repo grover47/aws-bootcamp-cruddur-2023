@@ -6,4 +6,8 @@ Instrument our backend flask application to use Open Telemetry (OTEL) with Honey
 Run queries to explore traces within Honeycomb.io
 [Proof of work] (assets%20week%202/Honeycomb%20working%20with%20Docker%20week%202.png)
 
+Instrument AWS X-Ray into backend flask application
+[Proof of work] (assets%20week%202/xray%20in%20app.py%20week%202.png)
+
+
 
