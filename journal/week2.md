@@ -25,7 +25,15 @@
 ![Proof of work] (assets%20week%202/Spans%20and%20Attributes%20week%202.png)
 
 ## Install WatchTower and write a custom logger to send application log data to CloudWatch Log group
-![Proof of work] ()
+![Proof of work] (assets%20week%202/Logger%20for%20Cloudwatch%20week%202.png)
+![Proof of work] (assets%20week%202/Watchtower%20in%20requirements.txt%20week%202.png)
+![Proof of work] (assets%20week%202/Log%20Streams%20in%20Cloudwattch%20week%202.png)
+
+## I also completed the Codespaces tutorial, here is the screen shot for proof of work
+![Proof of work] (assets%20week%202/Codespaces%20week%202.png)
+
+Ran into issues with Honeycomb and Rollbar, aftter research on the forums and help from the community I was able to overcome and resolve. I feel this week I have a much better handle on Github, Gitpod and the overall workflow for this bootcamp.
+
 
 
 
