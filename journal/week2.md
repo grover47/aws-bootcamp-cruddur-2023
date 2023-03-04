@@ -3,7 +3,7 @@
 ## Homework - Observability:
 
 Instrument our backend flask application to use Open Telemetry (OTEL) with Honeycomb.io as the provider
-[Proof of work] (assets%20week%202/Backend%20Honeycomb%20in%20app.py%20file%20week%202.png)
+[Proof of work] (https://github.com/grover47/aws-bootcamp-cruddur-2023/blob/main/journal/assets%20week%202/Backend%20Honeycomb%20in%20app.py%20file%20week%202.png)
 
 Run queries to explore traces within Honeycomb.io
 [Proof of work] (assets%20week%202/Honeycomb%20working%20with%20Docker%20week%202.png)
