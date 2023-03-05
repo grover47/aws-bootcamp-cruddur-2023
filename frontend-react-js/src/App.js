@@ -1,5 +1,11 @@
 import './App.css';
 
+import process from 'process';
+import {
+  createBrowserRouter,
+  RouterProvider
+} from "react-router-dom";
+
 import HomeFeedPage from './pages/HomeFeedPage';
 import NotificationsFeedPage from './pages/NotificationsFeedPage';
 import UserFeedPage from './pages/UserFeedPage';
@@ -27,11 +33,6 @@ Amplify.configure({
     userPoolWebClientId: process.env.REACT_APP_AWS_USER_POOLS_WEB_CLIENT_ID,   // OPTIONAL - Amazon Cognito Web Client ID (26-char alphanumeric string)
   }
 });
-import process from 'process';
-import {
-  createBrowserRouter,
-  RouterProvider
-} from "react-router-dom";
 
 const router = createBrowserRouter([
   {

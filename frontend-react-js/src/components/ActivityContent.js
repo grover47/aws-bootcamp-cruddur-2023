@@ -1,5 +1,5 @@
 import './ActivityContent.css';
-
+import React from 'react';
 import { Link } from "react-router-dom";
 import { DateTime } from 'luxon';
 import {ReactComponent as BombIcon} from './svg/bomb.svg';
