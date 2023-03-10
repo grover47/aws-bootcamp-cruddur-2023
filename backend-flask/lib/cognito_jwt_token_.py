@@ -1,3 +1,5 @@
+HTTP_HEADER = "Authorization"
+
 import time
 import requests
 from jose import jwk, jwt
@@ -11,7 +13,8 @@ class FlaskAWSCognitoError(Exception):
 class TokenVerifyError(Exception):
     pass
 
-class CognitoTokenVerification:
+
+class CognitoJwtToken:
     def __init__(self, user_pool_id, user_pool_client_id, region, request_client=None):
         self.region = region
         if not self.region:
@@ -24,6 +27,14 @@ class CognitoTokenVerification:
         else:
             self.request_client = request_client
         self._load_jwk_keys()
+        
+@classmethod
+def extract_access_token(request_headers):
+    access_token = None
+    auth_header = request_headers.get(HTTP_HEADER)
+    if auth_header and " " in auth_header:
+        _, access_token = auth_header.split()
+    return access_token    
 
     def _load_jwk_keys(self):
         keys_url = f"https://cognito-idp.{self.region}.amazonaws.com/{self.user_pool_id}/.well-known/jwks.json"
