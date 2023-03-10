@@ -2,8 +2,9 @@ from flask import Flask
 from flask import request
 from flask_cors import CORS, cross_origin
 import os
+import sys
 
-from.lib.cognito_token_verification import CognitoTokenVerification
+from.lib.cognito_jwt_token import CognitoJwtToken, extract_access_token, TokenVerifyError
 
 from services.home_activities import *
 from services.notifications_activities import *
@@ -16,16 +17,27 @@ from services.messages import *
 from services.create_message import *
 from services.show_activity import *
 
+# HONEYCOMB --------------   
+from opentelemetry import trace
+from opentelemetry.instrumentation.flask import FlaskInstrumentor
+from opentelemetry.instrumentation.requests import RequestsInstrumentor
+from opentelemetry.exporter.otlp.proto.http.trace_exporter import OTLPSpanExporter
+from opentelemetry.sdk.trace import TracerProvider
+from opentelemetry.sdk.trace.export import BatchSpanProcessor
+
 # x-ray ----------------
 from aws_xray_sdk.core import xray_recorder
 from aws_xray_sdk.ext.flask.middleware import XRayMiddleware
 
+
 # Cloudwatch Logs --------
 import watchtower
 import logging
-from time import strftime
+
 
 # Rollbar --------
+from time import strftime
+import os
 import rollbar
 import rollbar.contrib.flask
 from flask import got_request_exception
@@ -50,8 +62,8 @@ tracer = trace.get_tracer(__name__)
 
 
 # x-ray ----------------
-# xray_url = os.getenv("AWS_XRAY_URL")
-# xray_recorder.configure(service='backend-flask', dynamic_naming=xray_url)
+xray_url = os.getenv("AWS_XRAY_URL")
+xray_recorder.configure(service='backend-flask', dynamic_naming=xray_url)
 
 
 app = Flask(__name__)
@@ -62,7 +74,8 @@ cognito_jwt_token = CognitoJwtToken(
 )
 
 # x-ray ----------------
-# XRayMiddleware(app, xray_recorder)
+XRayMiddleware(app, xray_recorder)
+
 # HONEYCOMB -------------- 
 # Initialize automatic instrumentation with Flask
 FlaskInstrumentor().instrument_app(app)
@@ -144,12 +157,21 @@ def data_create_message():
   return
 
 @app.route("/api/activities/home", methods=['GET'])
+@xray_recorder.capture('activities_home')
 def data_home():
-  app.logger.debug('AUTH HEADER')
-  app.logger.debug(
-    request.headers.get('Authorization')
-  )
-  data = HomeActivities.run()
+  access_token = extract_access_token(request.headers)
+  try:
+    claims = cognito_jwt_token.verify(access_token)
+    # authenticated requests
+    app.logger.debug("authenticated")
+    app.logger.debug(claims)
+    app.logger.debug(claims['username'])
+    data = HomeActivities.run(cognito_user_id=claims['username'])
+  except TokenVerifyError as e:
+     # unauthenticated requests
+    app.logger.debug(e)
+    app.logger.debug("unauthenticated")
+    data = HomeActivities.run()
   return data, 200
 
 @app.route("/api/activities/notifications", methods=['GET'])
