@@ -3,6 +3,8 @@ from flask import request
 from flask_cors import CORS, cross_origin
 import os
 
+from.lib.cognito_token_verification import CognitoTokenVerification
+
 from services.home_activities import *
 from services.notifications_activities import *
 from services.user_activities import *
@@ -63,6 +65,12 @@ tracer = trace.get_tracer(__name__)
 
 
 app = Flask(__name__)
+cognito_token_verification = CognitoTokenVerification(
+  user_pool_id=os.getenv(""), 
+  user_pool_client_id=os.getenv(""), 
+  region=os.gettenv(""):
+)
+
 # x-ray ----------------
 # XRayMiddleware(app, xray_recorder)
 # HONEYCOMB -------------- 
