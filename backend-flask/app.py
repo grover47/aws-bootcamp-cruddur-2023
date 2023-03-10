@@ -66,9 +66,9 @@ tracer = trace.get_tracer(__name__)
 
 app = Flask(__name__)
 cognito_token_verification = CognitoTokenVerification(
-  user_pool_id=os.getenv(""), 
-  user_pool_client_id=os.getenv(""), 
-  region=os.gettenv(""):
+  user_pool_id=os.getenv("AWS_COGNITO_USER_POOL_ID"), 
+  user_pool_client_id=os.getenv("AWS_COGNITO_USER_POOL_CLIENT_ID"), 
+  region=os.gettenv("AWS_DEFAULT_REGION")
 )
 
 # x-ray ----------------
