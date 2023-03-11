@@ -30,6 +30,6 @@ Confirmation page code tthatt was implemented
 Verify JWT Token server side to serve authenticated API endpoints in Flask Application
 ![Proof of work](assets%20week%203/JWT%20Server%20Side%20Code%20week%203.png)
 
-## I did run into several issues with code for cognito and JWT in cognito_jwt_token. Afte rewatching the video numerous times and rebuilding Cognito User pool I was able to implement and resolve the errors for confirmation.
+## I did run into several issues with code for cognito and JWT in cognito_jwt_token. After rewatching the video numerous times and rebuilding Cognito User pool I was able to implement and resolve the errors for confirmation in cognito.
 
 ## JWT Server side video took 2 solid days of debugging and correcting any issues, for example spelling, or not removing = sign in the code. these were a few of the code issues I ran into. Happy to report I able to resolve and complete requirements for homework.
