@@ -26,5 +26,5 @@ Confirmation page code tthatt was implemented
 ![Proof of work](assets%20week%203/Confirmation%20Page%20code%20week%203.png)
 
 
-
+Verify JWT Token server side to serve authenticated API endpoints in Flask Application
 ![Proof of work]()
