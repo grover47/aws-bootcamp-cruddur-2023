@@ -17,7 +17,7 @@ Recovery page
 ![Proof of work](assets%20week%203/Recovery%20page%20working%20week%203.png)
 
 
-
+Show conditional elements and data based on logged in or logged out
 ![Proof of work]()
 
 
