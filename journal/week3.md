@@ -22,8 +22,8 @@ Show conditional elements and data based on logged in or logged out
 
 
 
-
-![Proof of work]()
+Confirmation page code tthatt was implemented
+![Proof of work](assets%20week%203/Confirmation%20Page%20code%20week%203.png)
 
 
 
