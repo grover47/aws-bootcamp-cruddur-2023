@@ -11,9 +11,7 @@ Install and configure Amplify client-side library for Amazon Congito
 
 Implement API calls to Amazon Coginto for custom login, signup, recovery and forgot password page
 ![Proof of work](assets%20week%203/Cruddur%20sign%20in%20week%203.png)
-
-
-
+![Proof of work](assets%20week%203/Cruddur%20sign%20in%20week%203.png)
 ![Proof of work]()
 
 
