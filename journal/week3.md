@@ -28,4 +28,4 @@ Confirmation page code tthatt was implemented
 
 
 Verify JWT Token server side to serve authenticated API endpoints in Flask Application
-![Proof of work]()
+![Proof of work](assets%20week%203/JWT%20Server%20Side%20Code%20week%203.png)
