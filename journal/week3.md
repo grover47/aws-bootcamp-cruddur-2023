@@ -13,8 +13,8 @@ Implement API calls to Amazon Coginto for custom login, signup, recovery and for
 ![Proof of work](assets%20week%203/Cruddur%20sign%20in%20week%203.png)
 Signup Page Code
 ![Proof of work](assets%20week%203/Signup%20Page%20week%203.png)
-
-![Proof of work]()
+Recovery page
+![Proof of work](assets%20week%203/Recovery%20page%20working%20week%203.png)
 
 
 
