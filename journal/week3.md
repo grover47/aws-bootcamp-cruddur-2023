@@ -18,7 +18,7 @@ Recovery page
 
 
 Show conditional elements and data based on logged in or logged out
-![Proof of work]()
+![Proof of work](assets%20week%203/Successfully%20Reset%20week%203.png)
 
 
 
