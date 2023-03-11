@@ -20,6 +20,7 @@ def extract_access_token(request_headers):
 class CognitoJwtToken:
     def __init__(self, user_pool_id, user_pool_client_id, region, request_client=None):
         self.region = region
+        app.logger.debug(jwt_keys)
         if not self.region:
             raise FlaskAWSCognitoError("No AWS region provided")
         self.user_pool_id = user_pool_id
