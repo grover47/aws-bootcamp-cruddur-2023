@@ -7,7 +7,7 @@ Provision via ClickOps a Amazon Cognito User Pool
 
 
 Install and configure Amplify client-side library for Amazon Congito
-![Proof of work]()
+![Proof of work](assets%20week%203/Configure%20AWS%20Amplify%20week.png)
 
 
 
