@@ -1,1 +1,5 @@
 #! /usr/bin/bash
+
+echo "db-schema-load"
+
+psql1 $CONNECTION_URL cruddur < db/schema.sql
