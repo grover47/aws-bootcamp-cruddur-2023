@@ -1,3 +1,4 @@
+-- this file was manually created
 INSERT INTO public.users (display_name, handle, cognito_user_id)
 VALUES
   ('Andrew Brown', 'andrewbrown' ,'MOCK'),
