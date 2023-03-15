@@ -9,4 +9,4 @@ echo "db-create"
 
 NO_DB_CONNECTION_URL=$(sed 's/\/cruddur//g' <<< "$CONNECTION_URL")
 
-psql1 CONNECTION_URL -c "create database cruddur;"
+psql $CONNECTION_URL -c "create database cruddur;"
