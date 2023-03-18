@@ -1,8 +1,5 @@
 from psycopg_pool import ConnectionPool
 import os
-import re
-import sys
-from flask import current_app as app
 
 class Db:
   def __init__(self):
