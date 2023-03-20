@@ -1,7 +1,11 @@
 # Week 4 — Postgres and RDS
 
 # Required homework for weeek 4
-Have a lecture about data modelling in (3rd Normal Form) 3NF for SQL
+## Have a lecture about data modelling in (3rd Normal Form) 3NF for SQL
+
+
+
+
 Launch Postgres locally via a container
 Seed our Postgres Database table with data
 Write a Postgres adapter
