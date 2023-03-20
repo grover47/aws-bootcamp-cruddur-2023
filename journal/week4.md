@@ -11,11 +11,11 @@
 
 
 ## Seed our Postgres Database table with data
-![Proof of work]()
+![Proof of work](assets%20week%204/tables%20and%20db%20connectt%20week%204.png)
 
 
 ## Write a Postgres adapter
-![Proof of work]()
+![Proof of work](assets%20week%204/db%20scripts%20week%204.png)
 
 
 ## Write a DDL (for creating schema)
