@@ -22,10 +22,10 @@
 ![Proof of work](assets%20week%204/Scripit%20for%20Schema%20week%204.png)
 
 ## Write an SQL read query
-![Proof of work]()
+![Proof of work](assets%20week%204/Scripit%20for%20Schema%20week%204.png)
 
 ## Write an SQL write query
-![Proof of work]()
+![Proof of work](assets%20week%204/Scripit%20for%20Schema%20week%204.png)
 
 ## Provision an RDS Postgres instance
 ![Proof of work]()
