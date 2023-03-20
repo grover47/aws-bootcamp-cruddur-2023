@@ -1,4 +1,3 @@
-import logging
 from datetime import datetime, timedelta, timezone
 from opentelemetry import trace
 
