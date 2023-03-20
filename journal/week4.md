@@ -7,39 +7,39 @@
 
 
 ## Launch Postgres locally via a container
-![Proof of work](assets%20week%203/Cognito%20verification%20week%203.png)
+![Proof of work](
 
 
 ## Seed our Postgres Database table with data
-![Proof of work](assets%20week%203/Cognito%20verification%20week%203.png)
+![Proof of work]()
 
 
 ## Write a Postgres adapter
-![Proof of work](assets%20week%203/Cognito%20verification%20week%203.png)
+![Proof of work]()
 
 
 ## Write a DDL (for creating schema)
-![Proof of work](assets%20week%203/Cognito%20verification%20week%203.png)
+![Proof of work](g)
 
 ## Write an SQL read query
-![Proof of work](assets%20week%203/Cognito%20verification%20week%203.png)
+![Proof of work]()
 
 ## Write an SQL write query
-![Proof of work](assets%20week%203/Cognito%20verification%20week%203.png)
+![Proof of work]()
 
 ## Provision an RDS Postgres instance
-![Proof of work](assets%20week%203/Cognito%20verification%20week%203.png)
+![Proof of work]()
 
 
 ## Configure VPC Security Groups
-![Proof of work](assets%20week%203/Cognito%20verification%20week%203.png)
+![Proof of work]()
 
 
 ## Configure local backend application to use production connection URL
-![Proof of work](assets%20week%203/Cognito%20verification%20week%203.png)
+![Proof of work]()
 
 ## Add a caching layer using Momento Serverless Cache
-![Proof of work](assets%20week%203/Cognito%20verification%20week%203.png)
+![Proof of work]()
 
 ## Propagate metrics from DDB to an RDS metrics table 
-![Proof of work](assets%20week%203/Cognito%20verification%20week%203.png)
+![Proof of work]()
