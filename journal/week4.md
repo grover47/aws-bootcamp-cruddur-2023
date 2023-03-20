@@ -40,4 +40,6 @@
 ![Proof of work](assets%20week%204/tables%20and%20db%20connectt%20week%204.png)
 
 ## Propagate metrics from DDB to an RDS metrics table 
-![Proof of work]()
+![Proof of work](assets%20week%204/Cloudwatch%20user%20signup%20no%20errors%20week%204.png)
+
+Ran in to a number of errors, but ttime and persistance prevailed and I was able to figure it out. Or get great support from bootcampers.
