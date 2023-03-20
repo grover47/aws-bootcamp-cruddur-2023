@@ -4,7 +4,6 @@ from flask_cors import CORS, cross_origin
 import os
 import sys
 
-
 from services.home_activities import *
 from services.notifications_activities import *
 from services.user_activities import *
@@ -31,15 +30,15 @@ from opentelemetry.sdk.trace.export import BatchSpanProcessor
 #from aws_xray_sdk.ext.flask.middleware import XRayMiddleware
 
 # Cloudwatch Logs ------
-#import watchtower
-#import logging
+import watchtower
+import logging
 
 #Rollbar ------
-#from time import strftime
-#import os 
-#import rollbar
-#import rollbar.contrib.flask
-#from flask import got_request_exception
+from time import strftime
+import os 
+import rollbar
+import rollbar.contrib.flask
+from flask import got_request_exception
 
 # Configuring Logger to Use CloudWatch
 # LOGGER = logging.getLogger(__name__)
@@ -52,11 +51,11 @@ from opentelemetry.sdk.trace.export import BatchSpanProcessor
 
 # Honeycomb ------
 # Initialize tracing and an exporter that can send data to Honeycomb
-#provider = TracerProvider()
-#processor = BatchSpanProcessor(OTLPSpanExporter())
-#provider.add_span_processor(processor)
-#trace.set_tracer_provider(provider)
-#tracer = trace.get_tracer(__name__)
+provider = TracerProvider()
+processor = BatchSpanProcessor(OTLPSpanExporter())
+provider.add_span_processor(processor)
+trace.set_tracer_provider(provider)
+tracer = trace.get_tracer(__name__)
 
 # X-RAY -------
 #xray_url = os.getenv("AWS_XRAY_URL")
@@ -75,8 +74,8 @@ cognito_jwt_token = CognitoJwtToken(
 
 # Honeycomb ------
 # Initialize automatic instrumentation with Flask
-#FlaskInstrumentor().instrument_app(app)
-#RequestsInstrumentor().instrument()
+FlaskInstrumentor().instrument_app(app)
+RequestsInstrumentor().instrument()
 
 frontend = os.getenv('FRONTEND_URL')
 backend = os.getenv('BACKEND_URL')
@@ -96,27 +95,27 @@ cors = CORS(
  #   return response
 
  # Rollbar ------
-#rollbar_access_token = os.getenv('ROLLBAR_ACCESS_TOKEN')
-#@app.before_first_request
-#def init_rollbar():
- #   """init rollbar module"""
- #   rollbar.init(
-  #      # access token
-   #     '${ROLLBAR_ACCESS_TOKEN}',
-    #    # environment name
-     #   'production',
+rollbar_access_token = os.getenv('ROLLBAR_ACCESS_TOKEN')
+@app.before_first_request
+def init_rollbar():
+    """init rollbar module"""
+    rollbar.init(
+        # access token
+        '5c462803440e4ed9a8a870c9608d9642',
+        # environment name
+        'production',
         # server root directory, makes tracebacks prettier
-      #  root=os.path.dirname(os.path.realpath(__file__)),
+        root=os.path.dirname(os.path.realpath(__file__)),
         # flask already sets up logging
-       # allow_logging_basic_config=False)
+        allow_logging_basic_config=False)
 
     # send exceptions from `app` to rollbar, using flask's signal system.
-    #got_request_exception.connect(rollbar.contrib.flask.report_exception, app)
+    got_request_exception.connect(rollbar.contrib.flask.report_exception, app)
 
-#@app.route('/rollbar/test')
-#def rollbar_test():
-    #rollbar.report_message('Hello World!', 'warning')
-    #return "Hello World!"
+@app.route('/rollbar/test')
+def rollbar_test():
+    rollbar.report_message('Hello World!', 'warning')
+    return "Hello World!"
 
 @app.route("/api/message_groups", methods=['GET'])
 def data_message_groups():
@@ -171,13 +170,13 @@ def data_home():
     data = HomeActivities.run()
   return data, 200
 
-# @app.route("/api/activities/notifications", methods=['GET'])
-# def data_notifications():
-#  data = NotificationsActivities.run()
-#  return data, 200
+@app.route("/api/activities/notifications", methods=['GET'])
+def data_notifications():
+  data = NotificationsActivities.run()
+  return data, 200
 
 @app.route("/api/activities/@<string:handle>", methods=['GET'])
-@xray_recorder.capture('activities_users')
+#@xray_recorder.capture('activities_users')
 def data_handle(handle):
   model = UserActivities.run(handle)
   if model['errors'] is not None:
@@ -209,7 +208,7 @@ def data_activities():
   return
 
 @app.route("/api/activities/<string:activity_uuid>", methods=['GET'])
-@xray_recorder.capture('activities_show')
+#@xray_recorder.capture('activities_show')
 def data_show_activity(activity_uuid):
   data = ShowActivity.run(activity_uuid=activity_uuid)
   return data, 200
