@@ -7,7 +7,7 @@
 
 
 ## Launch Postgres locally via a container
-![Proof of work](
+![Proof of work](assets%20week%204/PROD%20connected%20%20and%20working%20week%204.png)
 
 
 ## Seed our Postgres Database table with data
