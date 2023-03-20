@@ -33,13 +33,11 @@
 
 ## Configure VPC Security Groups
 ![Proof of work](assets%20week%204/VPC%20week%204.png)
+![Proof of work](assets%20week%204/VPC%20week%204.png))
 
 
 ## Configure local backend application to use production connection URL
-![Proof of work]()
-
-## Add a caching layer using Momento Serverless Cache
-![Proof of work]()
+![Proof of work](assets%20week%204/tables%20and%20db%20connectt%20week%204.png)
 
 ## Propagate metrics from DDB to an RDS metrics table 
 ![Proof of work]()
