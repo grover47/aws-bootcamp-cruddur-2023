@@ -19,7 +19,7 @@ class Db:
     print("\n")
     print(f'{green} Load SQL Template: {template_path} {no_color}')
 
-    with open(template_path,'r') as f:
+    with open(template_path, 'r') as f:
       template_content = f.read()
     return template_content
 
