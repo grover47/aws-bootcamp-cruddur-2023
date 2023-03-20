@@ -28,11 +28,11 @@
 ![Proof of work](assets%20week%204/Scripit%20for%20Schema%20week%204.png)
 
 ## Provision an RDS Postgres instance
-![Proof of work]()
+![Proof of work](assets%20week%204/Postgres%20CLI%20running%20week%204.png)
 
 
 ## Configure VPC Security Groups
-![Proof of work]()
+![Proof of work](assets%20week%204/VPC%20week%204.png)
 
 
 ## Configure local backend application to use production connection URL
