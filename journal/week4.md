@@ -1,6 +1,6 @@
 # Week 4 — Postgres and RDS
 
-# Required homework for weeek 4
+# Required homework for week 4
 
 ## Have a lecture about data modelling in (3rd Normal Form) 3NF for SQL (example)
 ![Proof of work](assets%20week%204/Screenshot%202023-03-19%20at%2010.46.36%20PM.png)
