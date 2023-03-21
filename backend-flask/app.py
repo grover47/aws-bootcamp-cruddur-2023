@@ -16,7 +16,6 @@ from services.create_message import *
 from services.show_activity import *
 
 from lib.cognito_jwt_token import CognitoJwtToken, extract_access_token, TokenVerifyError
-from lib.momento import MomentoCounter
 
 # HoneyComb ---------
 from opentelemetry import trace
@@ -136,9 +135,12 @@ def data_message_groups():
   else:
     return model['data'], 200
 
-@app.route("/api/messages/<string:message_group_uuid>", methods=['GET'])
-def data_messages(message_group_uuid):
-  model = Messages.run(message_group_uuid=message_group_uuid)
+@app.route("/api/messages/@<string:handle>", methods=['GET'])
+def data_messages(handle):
+  user_sender_handle = 'andrewbrown'
+  user_receiver_handle = request.args.get('user_reciever_handle')
+
+  model = Messages.run(user_sender_handle=user_sender_handle, user_receiver_handle=user_receiver_handle)
   if model['errors'] is not None:
     return model['errors'], 422
   else:
@@ -148,46 +150,16 @@ def data_messages(message_group_uuid):
 @app.route("/api/messages", methods=['POST','OPTIONS'])
 @cross_origin()
 def data_create_message():
-  access_token = extract_access_token(request.headers)
-  try:
-    claims = cognito_jwt_token.verify(access_token)
-    # authenicatied request
-    app.logger.debug("authenicated")
-    app.logger.debug(claims)
-    app.logger.debug(claims['username'])
-    cognito_user_id = claims['sub']
-    message = request.json['message']
+  user_sender_handle = 'andrewbrown'
+  user_receiver_handle = request.json['user_receiver_handle']
+  message = request.json['message']
 
-    message_group_uuid   = request.json.get('message_group_uuid',None)
-    user_receiver_handle = request.json.get('user_receiver_handle',None)
-
-    if message_group_uuid == None:
-      # Create for the first time
-      model = CreateMessage.run(
-        mode="create",
-        message=message,
-        cognito_user_id=cognito_user_id,
-        user_receiver_handle=user_receiver_handle
-      )
-    else:
-      # Push onto existing Message Group
-      model = CreateMessage.run(
-        mode="update",
-        message=message,
-        message_group_uuid=message_group_uuid,
-        cognito_user_id=cognito_user_id
-      )
-
-    if model['errors'] is not None:
-      return model['errors'], 422
-    else:
-      return model['data'], 200
-  except TokenVerifyError as e:
-    # unauthenicatied request
-    app.logger.debug(e)
-    app.logger.debug("unauthenicated")
-    return {}, 401
-
+  model = CreateMessage.run(message=message,user_sender_handle=user_sender_handle,user_receiver_handle=user_receiver_handle)
+  if model['errors'] is not None:
+    return model['errors'], 422
+  else:
+    return model['data'], 200
+  return
 
 @app.route("/api/activities/home", methods=['GET'])
 #@xray_recorder.capture('activities_home')
@@ -261,15 +233,6 @@ def data_activities_reply(activity_uuid):
   else:
     return model['data'], 200
   return
-
-@app.route("/api/messages/counter", methods=['GET'])
-def data_messages_counter():
-  access_token = extract_access_token(request.headers)
-  #try:
-  #  claims = cognito_jwt_token.verify(access_token)
-  #  cognito_user_id = claims['sub']
-  #  count = MessagesCounter.run(cognito_user_id=cognito_user_id)
-  #return {'count': count}, 200
 
 if __name__ == "__main__":
   app.run(debug=True)
