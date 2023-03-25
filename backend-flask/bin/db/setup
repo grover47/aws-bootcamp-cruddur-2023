@@ -1,4 +1,4 @@
-#!  /usr/bin/bash
+#! /usr/bin/bash
 
 -e # stop if it fails at any point
 
