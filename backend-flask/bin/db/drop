@@ -5,7 +5,7 @@ NO_COLOR='\033[0m'
 LABEL="drop"
 printf "${CYAN}== ${LABEL}${NO_COLOR}\n"
 
-echo "drop"
+
 
 NO_DB_CONNECTION_URL=$(sed 's/\/cruddur//g' <<< "$CONNECTION_URL")
 
