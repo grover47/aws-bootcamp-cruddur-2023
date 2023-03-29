@@ -67,9 +67,9 @@ class Db:
         cur.execute(wrapped_sql,params)
         json = cur.fetchone()
         return json[0]
+        
   # When we want to return an array of json objects
   def query_object_json(self,sql,params={}):
-
     self.print_sql('json',sql,params)
     self.print_params(params)
     wrapped_sql = self.query_wrap_object(sql)
@@ -82,6 +82,7 @@ class Db:
           "{}"
         else:
           return json[0]
+
   def query_wrap_object(self,template):
     sql = f"""
     (SELECT COALESCE(row_to_json(object_row),'{{}}'::json) FROM (
@@ -96,6 +97,7 @@ class Db:
     ) array_row);
     """
     return sql
+    
   def print_sql_err(self,err):
     # get details about the exception
     err_type, err_obj, traceback = sys.exc_info()
