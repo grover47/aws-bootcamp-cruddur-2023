@@ -45,6 +45,7 @@ class Ddb:
         'created_at': last_sent_at
       })
     return results
+
   def list_messages(client,message_group_uuid):
     year = str(datetime.now().year)
     table_name = 'cruddur-messages'
@@ -73,6 +74,7 @@ class Ddb:
         'created_at': created_at
       })
     return results
+    
   def create_message(client,message_group_uuid, message, my_user_uuid, my_user_display_name, my_user_handle):
     now = datetime.now(timezone.utc).astimezone().isoformat()
     created_at = now
