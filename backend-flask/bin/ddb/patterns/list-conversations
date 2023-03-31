@@ -4,9 +4,10 @@ import boto3
 import sys
 import json
 import os
+from datetime import datetime, timedelta, timezone
 
 current_path = os.path.dirname(os.path.abspath(__file__))
-parent_path = os.path.abspath(os.path.join(current_path, '..', '..', '..'))
+parent_path = os.path.abspath(os.path.join(current_path, '..', '..','..'))
 sys.path.append(parent_path)
 from lib.db import db
 
@@ -27,23 +28,25 @@ def get_my_user_uuid():
       users.uuid
     FROM users
     WHERE
-      users.handle =%(handle)s
+      users.handle  = %(handle)s
   """
   uuid = db.query_value(sql,{
-    'handle':  'andrewbrown'
+    'handle':  'turtle47'
   })
   return uuid
 
+# my_user_uuid = "1506fa16-d775-4808-9f46-456661029af2"
 my_user_uuid = get_my_user_uuid()
 print(f"my-uuid: {my_user_uuid}")
-year = str(datetime.now().year)
+year = datetime.now().year
+
 # define the query parameters
 query_params = {
   'TableName': table_name,
   'KeyConditionExpression': 'pk = :pk AND begins_with(sk,:year)',
   'ScanIndexForward': False,
   'ExpressionAttributeValues': {
-    ':year': {'S': year },
+    ':year': {'S': str(year) },
     ':pk': {'S': f"GRP#{my_user_uuid}"}
   },
   'ReturnConsumedCapacity': 'TOTAL'
