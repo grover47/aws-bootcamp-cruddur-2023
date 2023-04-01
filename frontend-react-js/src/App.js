@@ -10,7 +10,7 @@ import SignupPage from './pages/SignupPage';
 import SigninPage from './pages/SigninPage';
 import RecoverPage from './pages/RecoverPage';
 import MessageGroupsPage from './pages/MessageGroupsPage';
-import MessageGroupsPage from './pages/MessageGroupPage';
+import MessageGroupPage from './pages/MessageGroupPage';
 import MessageGroupNewPage from './pages/MessageGroupNewPage';
 import ConfirmationPage from './pages/ConfirmationPage';
 import React from 'react';
