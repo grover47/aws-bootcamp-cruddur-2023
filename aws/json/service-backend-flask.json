@@ -8,27 +8,20 @@
       "awsvpcConfiguration": {
         "assignPublicIp": "ENABLED",
         "securityGroups": [
-          "sg-04ca5ebd69e0aec6f"
+          "sg-0455c3e03d7d54073"
         ],
         "subnets": [
-          "subnet-0462b87709683ccaa",
-          "subnet-066a53dd88d557e05",
-          "subnet-021a6adafb79249e3"
+          "subnet-0399fc3cfa66b7196",
+          "subnet-0805d03ef27063003",
+          "subnet-079796a1940776121",
+          "subnet-0873b12de110a6b1e",
+          "subnet-06489b2bc4f4fa58a",
+          "subnet-0f967ddb864408b47"
+
         ]
       }
     },
     "propagateTags": "SERVICE",
     "serviceName": "backend-flask",
-    "taskDefinition": "backend-flask",
-    "serviceConnectConfiguration": {
-      "enabled": true,
-      "namespace": "cruddur",
-      "services": [
-        {
-          "portName": "backend-flask",
-          "discoveryName": "backend-flask",
-          "clientAliases": [{"port": 4567}]
-        }
-      ]
-    }
+    "taskDefinition": "backend-flask"
   }
