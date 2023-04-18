@@ -44,8 +44,8 @@
           {"name": "OTEL_EXPORTER_OTLP_ENDPOINT", "value": "https://api.honeycomb.io"},
           {"name": "AWS_COGNITO_USER_POOL_ID", "value": "us-east-1_0RSrdDus3"},
           {"name": "AWS_COGNITO_USER_POOL_CLIENT_ID", "value": "3rli4op0d6u9ajb7rrtm5sdsud"},
-          {"name": "FRONTEND_URL", "value": "https://iamdevopsgeek.cloud"},
-          {"name": "BACKEND_URL", "value": "https://api.iamdevopsgeek.cloud"},
+          {"name": "FRONTEND_URL", "value": "https://auroraspaces.net"},
+          {"name": "BACKEND_URL", "value": "https://api.auroraspaces.net"},
           {"name": "AWS_DEFAULT_REGION", "value": "us-east-1"}
         ],
         "secrets": [
