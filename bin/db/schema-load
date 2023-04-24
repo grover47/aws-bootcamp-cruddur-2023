@@ -1,15 +1,12 @@
 #! /usr/bin/bash
 
+#echo "== db-schema-load"
 CYAN='\033[1;36m'
 NO_COLOR='\033[0m'
-LABEL="seed"
+LABEL="schema-load"
 printf "${CYAN}== ${LABEL}${NO_COLOR}\n"
 
-ABS_PATH=$(readlink -f "$0")
-BIN_PATH=$(dirname $ABS_PATH)
-PROJECT_PATH=$(dirname $BIN_PATH)
-BACKEND_FLASK_PATH="$PROJECT_PATH/backend-flask"
-schema_path="$BACKEND_FLASK_PATH/db/schema.sql"
+schema_path="$(realpath .)/db/schema.sql"
 echo $schema_path
 
 if [ "$1" = "prod" ]; then
@@ -19,4 +16,4 @@ else
   URL=$CONNECTION_URL
 fi
 
-psql $URL cruddur < $seed_path
+psql $URL cruddur < $schema_path
